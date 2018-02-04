@@ -1,4 +1,8 @@
 class AddDescriptionToArticles < ActiveRecord::Migration
+  def down
+  remove_column :title, :description
+  end
+  
   def change
     add_column :articles, :title, :string
     add_column :articles, :description, :text
