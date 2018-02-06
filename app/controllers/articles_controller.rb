@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
       flash[:success] = "Post was successfully updated"
       redirect_to article_path(@article)
     else
-      render `edit`
+      render 'edit'
     end
   end
   
@@ -48,6 +48,6 @@ class ArticlesController < ApplicationController
     end
     
     def article_params
-    params.require(:article).permit(:title, :description)
+    params.require(:article).permit(:title, :description, :post)
     end
-end
+  end
